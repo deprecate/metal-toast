@@ -17,8 +17,11 @@ Toast.STATE = {
 		}
 	},
 
-	visible: {
-		value: true
+	/**
+	 * The content of close button of the alert.
+	 * @type {html|string}
+	 */
+	closeButtonHtml: {
 	},
 
 	/**
@@ -44,6 +47,10 @@ Toast.STATE = {
 	 */
 	spinnerDone: {
 		value: false
+	},
+
+	visible: {
+		value: true
 	}
 };
 
