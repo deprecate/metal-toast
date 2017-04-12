@@ -30,13 +30,13 @@
     "metal-alert": "^2.0.1",
     "metal-dom": "^2.4.7",
     "metal-soy": "^2.4.7",
-    "run-sequence": "^1.2.2",
-    "westyle": "wedeploy/westyle#master"
+    "run-sequence": "^1.2.2"
   },
   "devDependencies": {
     "gulp-metal": "^1.9.8",
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "marble": "^2.8.0"
   }
 }
