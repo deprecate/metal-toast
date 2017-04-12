@@ -38,6 +38,7 @@ var iattr = IncrementalDom.attr;
 
 /**
  * @param {{
+ *    closeButton: (?),
  *    spinner: (?),
  *    spinnerDone: (?),
  *    elementClasses: (?),
@@ -68,21 +69,23 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         body();
       ie_close('span');
     }
-    ie_open('button', null, null,
-        'type', 'button',
-        'class', 'close',
-        'aria-label', 'Close',
-        'data-onclick', 'toggle');
-      if (closeButtonHtml) {
-        var dyn0 = closeButtonHtml;
-        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
-      } else {
-        ie_open('span', null, null,
-            'aria-hidden', 'true');
-          itext('\u00D7');
-        ie_close('span');
-      }
-    ie_close('button');
+    if (opt_data.closeButton) {
+      ie_open('button', null, null,
+          'type', 'button',
+          'class', 'close',
+          'aria-label', 'Close',
+          'data-onclick', 'toggle');
+        if (closeButtonHtml) {
+          var dyn0 = closeButtonHtml;
+          if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
+        } else {
+          ie_open('span', null, null,
+              'aria-hidden', 'true');
+            itext('\u00D7');
+          ie_close('span');
+        }
+      ie_close('button');
+    }
   ie_close('div');
 }
 exports.render = $render;
@@ -90,8 +93,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Toast.render';
 }
 
-exports.render.params = ["body","closeButtonHtml","spinner","spinnerDone","elementClasses","spinnerClasses"];
-exports.render.types = {"body":"html","closeButtonHtml":"html|string","spinner":"any","spinnerDone":"any","elementClasses":"any","spinnerClasses":"any"};
+exports.render.params = ["body","closeButtonHtml","closeButton","spinner","spinnerDone","elementClasses","spinnerClasses"];
+exports.render.types = {"body":"html","closeButtonHtml":"html|string","closeButton":"any","spinner":"any","spinnerDone":"any","elementClasses":"any","spinnerClasses":"any"};
 templates = exports;
 return exports;
 

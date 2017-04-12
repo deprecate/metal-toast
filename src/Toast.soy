@@ -2,6 +2,7 @@
 
 /**
  * This renders the main element
+ * @param closeButton
  * @param spinner
  * @param spinnerDone
  * @param? elementClasses
@@ -17,14 +18,14 @@
 		{if $body}
 			<span class="alert-body">{$body}</span>
 		{/if}
-
-		<button type="button" class="close" aria-label="Close" data-onclick="toggle">
-			{if $closeButtonHtml}
-				{$closeButtonHtml}
-			{else}
-				<span aria-hidden="true">×</span>
-			{/if}
-		</button>
-
+		{if $closeButton}
+			<button type="button" class="close" aria-label="Close" data-onclick="toggle">
+				{if $closeButtonHtml}
+					{$closeButtonHtml}
+				{else}
+					<span aria-hidden="true">×</span>
+				{/if}
+			</button>
+		{/if}
 	</div>
 {/template}

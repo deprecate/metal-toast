@@ -18,6 +18,15 @@ Toast.STATE = {
 	},
 
 	/**
+	 * Close button.
+	 * @type {boolean}
+	 * @default true
+	 */
+	closeButton: {
+		value: true
+	},
+
+	/**
 	 * The content of close button of the alert.
 	 * @type {html|string}
 	 */
@@ -27,7 +36,7 @@ Toast.STATE = {
 	/**
 	 * Spinner indicating.
 	 * @type {boolean}
-	 * @default false
+	 * @default true
 	 */
 	spinner: {
 		value: true
